@@ -8,7 +8,7 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "..", "лабы эвм", "отчеты_ЛР1", "Отчет_ЛР1_вариант07_Ильин.docx")
+SRC = os.path.join(HERE, "..", "..", "лабы эвм", "отчеты_ЛР1", "Отчет_ЛР1_вариант07_Ильин.docx")
 IMG = os.path.join(HERE, "img")
 OUT = os.path.join(HERE, "Отчет_ЛР1_ТАУ_Ильин_Жеренков.docx")
 
@@ -39,6 +39,7 @@ set_text(ps[12], "")
 set_text(ps[13], "Выполнили студенты группы М3О-307БВ-24")
 zh = copy.deepcopy(ps[14]._p)
 ps[14]._p.addnext(zh)
+ps[14].paragraph_format.space_after = 0
 set_text(docx.text.paragraph.Paragraph(zh, ps[14]._parent), "Жеренков Д.К.")
 set_text(ps[15], "Проверила:")
 set_text(ps[16], "Костыгова Л.А.")
